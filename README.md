@@ -1,5 +1,5 @@
 ## Revisa el proyecto acá
-[Abrir](stock-tienda.vercel.app)
+[Abrir](stock-tienda-7syc.vercel.app)
 
 # Vue 3 + Vite
 

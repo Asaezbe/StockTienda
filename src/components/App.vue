@@ -21,33 +21,40 @@
           <td>{{ juego.stock }}</td>
           <td>{{ juego.precio }}</td>
           <td>
-            <button @click="quitarStock(juego)">-</button>
-            <button @click="sumarStock(juego)">+</button>
+            <button @click="quitarStock(juego.codigo)">-</button>
+            <button @click="sumarStock(juego.codigo)">+</button>
           </td>
         </tr>
-        </tbody>
+      </tbody>
     </table>
   </section>
+
+
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue';
+<script>
+import { mapState, mapActions } from 'vuex';
 
-const juegos = ref([]);
-
-onMounted(async () => {
-  const response = await fetch(new URL('./assets/juegos.json', import.meta.url));
-  juegos.value = await response.json();
-});
-
-const quitarStock = (juego) => {
-  juego.stock--;
-};
-
-const sumarStock = (juego) => {
-  juego.stock++;
+export default {
+  computed: {
+    ...mapState(['juegos']),  // trae 'juegos' desde Vuex
+  },
+  methods: {
+    ...mapActions(['cargarJuegos']),  //  Carga los juegos
+    quitarStock(juegoCodigo) {
+      this.$store.commit('quitarStock', juegoCodigo);  // Disminuir stock
+    },
+    sumarStock(juegoCodigo) {
+      this.$store.commit('sumarStock', juegoCodigo);  // Aumentar stock
+    },
+  },
+  created() {
+    this.cargarJuegos();  // Carga los juegos.
+  },
 };
 </script>
+
+
 
 <style scoped>
 body {

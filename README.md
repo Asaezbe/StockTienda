@@ -1,7 +1,7 @@
 ## Revisa el proyecto acá
 [Abrir](https://stock-tienda-7syc.vercel.app/)
 
-Ojo, este proyecto no cuenta con la carpeta node modules y por este motivo, el servidor Vercel no es cpaza de reconocer el color de los textos en algunas celdas. Si seleccionas las celdas con el mouse podras ver todos los registros.
+Ojo, este proyecto no cuenta con la carpeta node modules y por este motivo, el servidor Vercel no es cpaza de reconocer el color de los textos en algunas celdas. Si seleccionas las celdas con el mouse podras ver todos los registros y funcionalidades.
 
 # Vue 3 + Vite
 
